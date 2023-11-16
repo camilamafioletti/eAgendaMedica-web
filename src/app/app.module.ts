@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { provideHttpClient } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DashboardModule } from './views/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    DashboardModule,
     CoreModule,
     NgbModule,
   ],
