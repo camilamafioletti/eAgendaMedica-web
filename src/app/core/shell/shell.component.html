@@ -6,11 +6,11 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <mat-divider></mat-divider>
-      <a mat-list-item href="#">Início</a>
+      <a mat-list-item href="dashboard">Início</a>
       <mat-divider></mat-divider>
       
       <mat-divider></mat-divider>
-      <a mat-list-item href="#">Médicos</a>
+      <a mat-list-item href="/medicos/listar">Médicos</a>
       <mat-divider></mat-divider>
 
       <mat-divider></mat-divider>
@@ -33,7 +33,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">Menu</mat-icon>
       </button>
-      <span class="d-flex align-items-center gap-2">e-Agenda Médica<mat-icon>collections_bookmark</mat-icon></span>
+      <span class="d-flex align-items-center gap-2">e-Agenda Médica<mat-icon>calendar_month</mat-icon></span>
     </mat-toolbar>
     <!-- Add Content Here -->
 

@@ -1,4 +1,14 @@
 .custom-card {
-  background-color: #d1d1f0;  /* Substitua pela cor desejada */
-  color: #333;  /* Substitua pela cor desejada para o texto */
+  background-color: #d1d1f0;  
+  color: #333;  
+}
+
+.bg {
+  background-repeat: no-repeat; 
+  background-position: center; 
+  background-size: cover; 
+  position: absolute;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
 }
