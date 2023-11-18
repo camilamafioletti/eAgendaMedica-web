@@ -1,6 +1,6 @@
 import { NgModule, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterModule, Routes } from '@angular/router';
-import { ListarMedicoComponent } from './listar-medico/listar-medico.component';
+import { ListarMedicosComponent } from './listar-medicos/listar-medico.component';
 import { InserirMedicoComponent } from './inserir-medico/inserir-medico.component';
 import { MedicosService } from './services/medicos.service';
 import { EditarMedicoComponent } from './editar-medico/editar-medico.component';
@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'listar',
-    component: ListarMedicoComponent,
+    component: ListarMedicosComponent,
     // resolve: { medicos: listarMedicosResolver },
   },
   {
