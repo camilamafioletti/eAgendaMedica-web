@@ -4,6 +4,7 @@ import { ListarMedicoComponent } from './listar-medico/listar-medico.component';
 import { InserirMedicoComponent } from './inserir-medico/inserir-medico.component';
 import { MedicosService } from './services/medicos.service';
 import { EditarMedicoComponent } from './editar-medico/editar-medico.component';
+import { ExcluirMedicoComponent } from './excluir-medico/excluir-medico.component';
 
 const formsMedicosResolver = (route: ActivatedRouteSnapshot) => {
   const id = parseInt(route.paramMap.get('id')!);
@@ -33,6 +34,11 @@ const routes: Routes = [
   {
     path: 'editar/:id',
     component: EditarMedicoComponent,
+    // resolve: { medicos: formsMedicosResolver },
+  },
+  {
+    path: 'excluir/:id',
+    component: ExcluirMedicoComponent,
     // resolve: { medicos: formsMedicosResolver },
   },
 

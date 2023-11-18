@@ -7,6 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MedicosService } from './services/medicos.service';
 import { EditarMedicoComponent } from './editar-medico/editar-medico.component';
+import { ExcluirMedicoComponent } from './excluir-medico/excluir-medico.component';
 
 
 
@@ -14,7 +15,8 @@ import { EditarMedicoComponent } from './editar-medico/editar-medico.component';
   declarations: [
     InserirMedicoComponent,
     ListarMedicoComponent,
-    EditarMedicoComponent
+    EditarMedicoComponent,
+    ExcluirMedicoComponent
   ],
   imports: [
     CommonModule,
