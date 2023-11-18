@@ -3,6 +3,7 @@ import { ActivatedRouteSnapshot, RouterModule, Routes } from '@angular/router';
 import { ListarMedicoComponent } from './listar-medico/listar-medico.component';
 import { InserirMedicoComponent } from './inserir-medico/inserir-medico.component';
 import { MedicosService } from './services/medicos.service';
+import { EditarMedicoComponent } from './editar-medico/editar-medico.component';
 
 const formsMedicosResolver = (route: ActivatedRouteSnapshot) => {
   const id = parseInt(route.paramMap.get('id')!);
@@ -28,6 +29,11 @@ const routes: Routes = [
   {
     path: 'inserir',
     component: InserirMedicoComponent,
+  },
+  {
+    path: 'editar/:id',
+    component: EditarMedicoComponent,
+    // resolve: { medicos: formsMedicosResolver },
   },
 
 ];

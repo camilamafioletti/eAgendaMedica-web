@@ -14,6 +14,11 @@ export class MedicosService {
     return this.http.post<Medico>(this.API_URL, medicos);
   }
 
+  editar(id: number, medico: Medico): Observable<Medico> {
+    const url = `${this.API_URL}/${id}`;
+
+    return this.http.put<Medico>(url, medico);
+  }
 
   selecionarPorId(id: number): Observable<Medico> {
     const url = `${this.API_URL}/${id}`;

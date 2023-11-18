@@ -6,13 +6,15 @@ import { MedicosRoutingModule } from './medicos-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MedicosService } from './services/medicos.service';
+import { EditarMedicoComponent } from './editar-medico/editar-medico.component';
 
 
 
 @NgModule({
   declarations: [
     InserirMedicoComponent,
-    ListarMedicoComponent
+    ListarMedicoComponent,
+    EditarMedicoComponent
   ],
   imports: [
     CommonModule,
