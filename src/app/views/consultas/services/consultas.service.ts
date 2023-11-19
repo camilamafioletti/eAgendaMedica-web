@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Medico as Consulta } from '../../models/medico';
 import { environment } from 'src/app/environments/environment.development';
+import { Consulta } from '../models/consulta';
 
 @Injectable()
 export class ConsultasService {

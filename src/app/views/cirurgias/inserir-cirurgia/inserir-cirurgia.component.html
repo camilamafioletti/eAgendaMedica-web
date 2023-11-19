@@ -1,0 +1,52 @@
+<div class="row justify-content-center align-items-center mt-5">
+    <div class="col-md-5">
+      <h1 class="fs-2">Agendar Cirurgia</h1>
+  
+      <form class="d-grid mt-4">
+        <mat-form-field appearance="outline" class="d-grid mt-3">
+          <mat-label for="titulo">Título</mat-label>
+          <input matInput type="text" placeholder="Digite o Título" />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="mt-3">
+          <mat-label for="horaInicio">Hora Início</mat-label>
+          <input matInput [matDatepicker]="pickerInicio" placeholder="Escolha a Hora Início" />
+          <mat-datepicker-toggle matSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+          <mat-datepicker #pickerInicio></mat-datepicker>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="mt-3">
+          <mat-label for="horaFinal">Hora Final</mat-label>
+          <input matInput [matDatepicker]="pickerFinal" placeholder="Escolha a Hora Final" />
+          <mat-datepicker-toggle matSuffix [for]="pickerFinal"></mat-datepicker-toggle>
+          <mat-datepicker #pickerFinal></mat-datepicker>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="mt-3">
+          <mat-label for="medicos">Médicos</mat-label>
+          <mat-select placeholder="Escolha os Médicos" multiple>
+            <!-- Adicione opções para os médicos aqui -->
+            <mat-option value="medico1">Médico 1</mat-option>
+            <mat-option value="medico2">Médico 2</mat-option>
+            <!-- Adicione mais opções conforme necessário -->
+          </mat-select>
+        </mat-form-field>
+  
+        <div class="d-flex justify-content-end gap-2 mt-5">
+          <button type="submit" class="py-3 px-5" color="primary" mat-raised-button>
+            Salvar
+          </button>
+          <button
+            type="button"
+            routerLink="/cirurgias/listar"
+            class="py-3 px-5"
+            color="warn"
+            mat-stroked-button
+          >
+            Voltar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

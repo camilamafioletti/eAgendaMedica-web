@@ -1,15 +1,15 @@
 <div class="row justify-content-center mt-5">
     <div class="col-md-8 d-grid gap-3 ps-0" >
-      <h1 class="fs-2 row justify-content-center ">Listar Consultas</h1>
+      <h1 class="fs-2 row justify-content-center ">Listar Cirurgias</h1>
   
       <button
-      routerLink="/consultas/inserir"
+      routerLink="/cirurgias/inserir"
       mat-raised-button
       class="me-auto py-4 px-5 fs-6"
       color="primary"
     >
       <mat-icon>add_circle</mat-icon>
-      Adicionar Consulta
+      Adicionar Cirurgia
     </button>
   
       <div class="row gap-3">
@@ -33,14 +33,7 @@
             <mat-card-subtitle>
                 <span>Hora Final</span>
             </mat-card-subtitle>
-          </mat-card-content>
-
-          <mat-card-content> 
-            <mat-card-subtitle>
-                <span>Medico</span>
-            </mat-card-subtitle>
-          </mat-card-content>
-          
+          </mat-card-content>          
   
           <mat-card-actions class="pe-0" align="end">
  
@@ -48,7 +41,7 @@
             mat-icon-button
             matTooltip="Editar"
             color="primary"
-            routerLink="/consultas/editar/id"
+            routerLink=""
           >
             <mat-icon>edit_note</mat-icon>
           </button>
@@ -56,7 +49,7 @@
           mat-icon-button
           matTooltip="Excluir"
           color="warn"
-          routerLink="/consultas/excluir/id"
+          routerLink=""
         >
           <mat-icon>delete_sweep</mat-icon>
         </button>

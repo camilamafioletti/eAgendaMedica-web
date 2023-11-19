@@ -4,6 +4,7 @@ import { ConsultasService } from './services/consultas.service';
 import { ListarConsultasComponent } from './listar-consultas/listar-consultas.component';
 import { InserirConsultaComponent } from './inserir-consulta/inserir-consulta.component';
 import { EditarConsultaComponent } from './editar-consulta/editar-consulta.component';
+import { ExcluirConsultaComponent } from './excluir-consulta/excluir-consulta.component';
 
 const formsConsultasResolver = (route: ActivatedRouteSnapshot) => {
   const id = parseInt(route.paramMap.get('id')!);
@@ -33,6 +34,11 @@ const routes: Routes = [
   {
     path: 'editar/:id',
     component: EditarConsultaComponent,
+    // resolve: { medicos: formsMedicosResolver },
+  },
+  {
+    path: 'excluir/:id',
+    component: ExcluirConsultaComponent,
     // resolve: { medicos: formsMedicosResolver },
   },
 
