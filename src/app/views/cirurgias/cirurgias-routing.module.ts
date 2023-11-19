@@ -4,6 +4,7 @@ import { CirurgiasService } from './services/cirurgias.service';
 import { ListarConsultasComponent } from '../consultas/listar-consultas/listar-consultas.component';
 import { ListarCirurgiasComponent } from './listar-cirurgias/listar-cirurgias.component';
 import { InserirCirurgiaComponent } from './inserir-cirurgia/inserir-cirurgia.component';
+import { EditarCirurgiaComponent } from './editar-cirurgia/editar-cirurgia.component';
 
 const formsCirurgiasResolver = (route: ActivatedRouteSnapshot) => {
   const id = parseInt(route.paramMap.get('id')!);
@@ -24,11 +25,16 @@ const routes: Routes = [
   {
     path: 'listar',
     component: ListarCirurgiasComponent,
-    // resolve: { medicos: listarMedicosResolver },
+    // resolve: { cirurgias: listarCirurgiasResolver },
   },
   {
     path: 'inserir',
     component: InserirCirurgiaComponent,
+  },
+  {
+  path: 'editar/:id',
+  component: EditarCirurgiaComponent,
+  // resolve: { cirurgias: formsCirurgiasResolver },
   },
 ];
 

@@ -7,12 +7,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CirurgiasService } from './services/cirurgias.service';
 import { ListarCirurgiasComponent } from './listar-cirurgias/listar-cirurgias.component';
 import { InserirCirurgiaComponent } from './inserir-cirurgia/inserir-cirurgia.component';
+import { EditarCirurgiaComponent } from './editar-cirurgia/editar-cirurgia.component';
 
 
 @NgModule({
   declarations: [
     ListarCirurgiasComponent,
-    InserirCirurgiaComponent
+    InserirCirurgiaComponent,
+    EditarCirurgiaComponent
   ],
   imports: [
     CommonModule,
