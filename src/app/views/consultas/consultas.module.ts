@@ -6,11 +6,13 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConsultasService } from './services/consultas.service';
 import { ListarConsultasComponent } from './listar-consultas/listar-consultas.component';
+import { InserirConsultaComponent } from './inserir-consulta/inserir-consulta.component';
 
 
 @NgModule({
   declarations: [
-    ListarConsultasComponent
+    ListarConsultasComponent,
+    InserirConsultaComponent
   ],
   imports: [
     CommonModule,
