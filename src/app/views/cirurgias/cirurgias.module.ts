@@ -8,13 +8,15 @@ import { CirurgiasService } from './services/cirurgias.service';
 import { ListarCirurgiasComponent } from './listar-cirurgias/listar-cirurgias.component';
 import { InserirCirurgiaComponent } from './inserir-cirurgia/inserir-cirurgia.component';
 import { EditarCirurgiaComponent } from './editar-cirurgia/editar-cirurgia.component';
+import { ExcluirCirurgiaComponent } from './excluir-cirurgia/excluir-cirurgia.component';
 
 
 @NgModule({
   declarations: [
     ListarCirurgiasComponent,
     InserirCirurgiaComponent,
-    EditarCirurgiaComponent
+    EditarCirurgiaComponent,
+    ExcluirCirurgiaComponent
   ],
   imports: [
     CommonModule,
