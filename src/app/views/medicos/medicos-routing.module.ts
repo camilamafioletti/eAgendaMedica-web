@@ -7,7 +7,7 @@ import { EditarMedicoComponent } from './editar-medico/editar-medico.component';
 import { ExcluirMedicoComponent } from './excluir-medico/excluir-medico.component';
 
 const formsMedicosResolver = (route: ActivatedRouteSnapshot) => {
-  const id = parseInt(route.paramMap.get('id')!);
+  const id = route.paramMap.get('id')!;
 
   return inject(MedicosService).selecionarPorId(id);
 };
@@ -41,7 +41,6 @@ const routes: Routes = [
     component: ExcluirMedicoComponent,
     // resolve: { medicos: formsMedicosResolver },
   },
-
 ];
 
 @NgModule({
