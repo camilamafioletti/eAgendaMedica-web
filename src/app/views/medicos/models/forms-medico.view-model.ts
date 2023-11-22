@@ -1,5 +1,5 @@
 export type FormsMedicoViewModel = {
-    Nome: string;
-    Telefone: string;
-    Crm: string;
+    nome: string;
+    telefone: string;
+    crm: string;
 }

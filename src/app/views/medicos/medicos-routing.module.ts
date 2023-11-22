@@ -25,7 +25,7 @@ const routes: Routes = [
   {
     path: 'listar',
     component: ListarMedicosComponent,
-    // resolve: { medicos: listarMedicosResolver },
+    resolve: { medicos: listarMedicosResolver },
   },
   {
     path: 'inserir',

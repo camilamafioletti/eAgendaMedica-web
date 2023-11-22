@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MedicosService } from './services/medicos.service';
 import { EditarMedicoComponent } from './editar-medico/editar-medico.component';
 import { ExcluirMedicoComponent } from './excluir-medico/excluir-medico.component';
-
+import 'src/app/extensions/form-group.extension';
 
 
 @NgModule({

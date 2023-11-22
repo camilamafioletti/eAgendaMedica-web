@@ -21,6 +21,7 @@ import { DashboardModule } from './views/dashboard/dashboard.module';
     DashboardModule,
     CoreModule,
     NgbModule,
+    
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
