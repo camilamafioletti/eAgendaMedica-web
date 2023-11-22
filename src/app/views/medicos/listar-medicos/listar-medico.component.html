@@ -1,67 +1,62 @@
 <div class="row justify-content-center mt-5">
-    <div class="col-md-8 d-grid gap-3 ps-0" >
-      <h1 class="fs-2 row justify-content-center ">Listar Médicos</h1>
-  
-      <button
-      routerLink="/medicos/inserir"
-      mat-raised-button
-      class="me-auto py-4 px-5 fs-6"
-      color="primary"
-    >
-      <mat-icon>add_circle</mat-icon>
-      Adicionar Médico
+  <div class="col-md-8 d-grid gap-3">
+    <h1 class="fs-2 row justify-content-center ">Lista de Médicos Cadastrados</h1>
+
+    <button routerLink="/medicos/inserir" mat-raised-button class="py-4 px-4 fs-8" color="primary">
+      <mat-icon>add</mat-icon>
+      Novo Médico
     </button>
-  
-      <div class="row gap-3">
-        <mat-card
-          appCardHover
-          class="col-12 col-md-6 col-lg-3"
-        >
-          <mat-card-header>
-            <mat-card-title>
-              <span>Titulo</span>
-            </mat-card-title>
-          </mat-card-header>
-  
-          
-          <mat-card-content> </mat-card-content>
-          
-  
-          <mat-card-actions class="pe-0" align="end">
-            <button
-              mat-icon-button
-              matTooltip="Visualizar Consultas"
-              color="primary"
-              routerLink=""
-            >
-              <mat-icon>sort</mat-icon>
-            </button>
-            <button
-              mat-icon-button
-              matTooltip="Visualizar Cirurgias"
-              color="primary"
-              routerLink=""
-            >
-              <mat-icon>filter_list</mat-icon>
-            </button>
-            <button
+
+    <div class="row gap-3">
+      <mat-card
+        appCardHover
+        class="col-12 col-md-6 col-lg-3"
+      >
+        <mat-card-header>
+          <mat-card-title>
+            <span>Mariana</span>
+          </mat-card-title>
+        </mat-card-header>
+
+        
+        <mat-card-content> </mat-card-content>
+        
+
+        <mat-card-actions class="pe-0" align="end">
+          <button
             mat-icon-button
-            matTooltip="Editar"
+            matTooltip="Visualizar Consultas"
             color="primary"
-            routerLink="/medicos/editar/id"
+            routerLink=""
           >
-            <mat-icon>edit_note</mat-icon>
+            <mat-icon>search</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            matTooltip="Visualizar Cirurgias"
+            color="primary"
+            routerLink=""
+          >
+            <mat-icon>zoom_in</mat-icon>
           </button>
           <button
           mat-icon-button
-          matTooltip="Excluir"
-          color="warn"
-          routerLink="/medicos/excluir/id"
+          matTooltip="Editar"
+          color="primary"
+          routerLink="/medicos/editar/id"
         >
-          <mat-icon>delete_sweep</mat-icon>
+          <mat-icon>edit_note</mat-icon>
         </button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
+        <button
+        mat-icon-button
+        matTooltip="Excluir"
+        color="warn"
+        routerLink="/medicos/excluir/id"
+      >
+        <mat-icon>delete_sweep</mat-icon>
+      </button>
+        </mat-card-actions>
+      </mat-card>
     </div>
   </div>
+</div>

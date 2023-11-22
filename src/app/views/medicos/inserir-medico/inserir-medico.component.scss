@@ -1,0 +1,51 @@
+.row {
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+  
+    .col-md-5 {
+      h1 {
+        font-size: 2rem;
+        color: #645294; // Azul
+      }
+  
+      form {
+        display: grid;
+        margin-top: 4rem;
+  
+        .mat-form-field {
+          display: grid;
+          margin-top: 1rem;
+  
+          &:first-child {
+            margin-top: 3rem;
+          }
+  
+          input,
+          mat-select {
+            width: 100%;
+          }
+        }
+  
+        .d-flex {
+          justify-content: flex-end;
+          gap: 2rem;
+          margin-top: 5rem;
+  
+          button {
+  
+            &:first-child {
+              background-color: #27ae60 !important; // Verde
+              color: #ffffff !important; // Branco
+            }
+  
+            &:last-child {
+              background-color: #645294 !important; // Vermelho
+              color: #ffffff !important; // Branco
+            }
+          }
+        }
+      }
+    }
+  }
+  
