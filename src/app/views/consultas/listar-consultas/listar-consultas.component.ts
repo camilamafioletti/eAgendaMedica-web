@@ -15,6 +15,5 @@ export class ListarConsultasComponent implements OnInit {
 
   ngOnInit(): void {
     this.consultas$ = this.route.data.pipe(map(dados => dados['consultas']));
-    console.log(this.consultas$)
   }
 }
