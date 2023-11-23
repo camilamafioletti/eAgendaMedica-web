@@ -9,6 +9,7 @@ import { ListarConsultasComponent } from './listar-consultas/listar-consultas.co
 import { InserirConsultaComponent } from './inserir-consulta/inserir-consulta.component';
 import { EditarConsultaComponent } from './editar-consulta/editar-consulta.component';
 import { ExcluirConsultaComponent } from './excluir-consulta/excluir-consulta.component';
+import { MedicosService } from '../medicos/services/medicos.service';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ExcluirConsultaComponent } from './excluir-consulta/excluir-consulta.co
     ReactiveFormsModule
   ],
   providers:[
-    ConsultasService
+    ConsultasService,
+    MedicosService
   ]
 })
 export class ConsultasModule { }

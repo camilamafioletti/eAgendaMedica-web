@@ -6,6 +6,7 @@ import { InserirConsultaComponent } from './inserir-consulta/inserir-consulta.co
 import { EditarConsultaComponent } from './editar-consulta/editar-consulta.component';
 import { ExcluirConsultaComponent } from './excluir-consulta/excluir-consulta.component';
 import { VisualizarConsultaViewModel } from './models/visualizar-consulta.view-model';
+import { MedicosService } from '../medicos/services/medicos.service';
 
 const formsConsultasResolver = (route: ActivatedRouteSnapshot) => {
   const id = route.paramMap.get('id')!;
@@ -25,6 +26,10 @@ const visualizarConsultasResolver: ResolveFn<VisualizarConsultaViewModel> = (
   );
 };
 
+const listarMedicosResolver = () => {
+  return inject(MedicosService).selecionarTodos();
+};
+
 const routes: Routes = [
   {
     path: '',
@@ -39,6 +44,7 @@ const routes: Routes = [
   {
     path: 'inserir',
     component: InserirConsultaComponent,
+    resolve: { medicos: listarMedicosResolver },
   },
   {
     path: 'editar/:id',

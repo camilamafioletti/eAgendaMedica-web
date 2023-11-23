@@ -2,15 +2,21 @@
     <div class="col-md-5">
       <h1 class="fs-2">Agendar Consulta</h1>
   
-      <form class="d-grid mt-4">
+      <form [formGroup]="form!" (ngSubmit)="gravar()" class="d-grid mt-4">
+
+
         <mat-form-field appearance="outline" class="d-grid mt-3">
           <mat-label for="titulo">Titulo</mat-label>
-          <input matInput type="text" placeholder="Digite o Titulo" />
+          <input 
+          formControlName="titulo"
+          matInput type="text" 
+          placeholder="Digite o Titulo" />
         </mat-form-field>
   
         <mat-form-field appearance="outline">
           <mat-label>Hora Início</mat-label>
           <input 
+          formControlName="horaInicio"
           type="text" 
           matInput
           placeholder="HH:mm"
@@ -20,6 +26,7 @@
         <mat-form-field appearance="outline">
           <mat-label>Hora Final</mat-label>
           <input 
+          formControlName="horaTermino"
           type="text" 
           matInput
           placeholder="HH:mm"
@@ -27,12 +34,14 @@
         </mat-form-field>
   
         <mat-form-field appearance="outline">
-          <mat-label for="medico">Médico</mat-label>
-          <mat-select placeholder="Escolha o Médico">
-            <!-- Add options for Medico here -->
-            <mat-option value="medico1">Médico 1</mat-option>
-            <mat-option value="medico2">Médico 2</mat-option>
-            <!-- Add more options as needed -->
+          <mat-label>Médico</mat-label>
+          <mat-select formControlName="medicoId">
+            <mat-option
+              [value]="medico.id"
+              *ngFor="let medico of medicos$ | async"
+            >
+              {{ medico.nome }}
+            </mat-option>
           </mat-select>
         </mat-form-field>
   
