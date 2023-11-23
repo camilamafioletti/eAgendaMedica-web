@@ -44,7 +44,7 @@
           mat-icon-button
           matTooltip="Editar"
           color="primary"
-          routerLink="/medicos/editar/id"
+          routerLink="/medicos/editar/{{medico.id}}"
         >
           <mat-icon>edit_note</mat-icon>
         </button>
@@ -52,7 +52,7 @@
         mat-icon-button
         matTooltip="Excluir"
         color="warn"
-        routerLink="/medicos/excluir/id"
+        routerLink="/medicos/excluir/{{medico.id}}"
       >
         <mat-icon>delete_sweep</mat-icon>
       </button>

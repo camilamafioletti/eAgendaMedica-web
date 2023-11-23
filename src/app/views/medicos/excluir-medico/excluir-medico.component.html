@@ -6,11 +6,11 @@
         Você tem certeza que deseja excluir o seguinte médico?
       </p>
   
-      <mat-list>
+      <mat-list *ngIf="medico$ | async as medico">
         <mat-list-item>
           <div class="d-flex justify-content-between mt-3">
             <span>Id:</span>
-            <span>01</span>
+            <span>{{medico.id}}</span>
           </div>
         </mat-list-item>
         <mat-divider></mat-divider>
@@ -18,16 +18,15 @@
         <mat-list-item>
           <div class="d-flex justify-content-between mt-3">
             <span>CRM:</span>
-            <span>78806-SP</span>
+            <span>{{medico.crm}}</span>
           </div>
         </mat-list-item>
         <mat-divider></mat-divider>
-      </mat-list>
 
       <mat-list-item>
         <div class="d-flex justify-content-between mt-3">
           <span>Nome:</span>
-          <span>Nome</span>
+          <span>{{medico.nome}}</span>
         </div>
       </mat-list-item>
       <mat-divider></mat-divider>
@@ -35,7 +34,7 @@
     <mat-list-item>
         <div class="d-flex justify-content-between mt-3">
           <span>Telefone:</span>
-          <span>49 9999-9999</span>
+          <span>{{medico.telefone}}</span>
         </div>
       </mat-list-item>
       <mat-divider></mat-divider>
@@ -46,13 +45,17 @@
           <span>Sim</span>
         </div>
       </mat-list-item>
+      </mat-list>
+
   
       <div class="d-flex justify-content-end gap-2 mt-3">
         <button
           class="py-3 px-5"
           color="warn"
           mat-raised-button
-        >
+          (click)="confirmar()"
+          >
+        
           Excluir
         </button>
         <button

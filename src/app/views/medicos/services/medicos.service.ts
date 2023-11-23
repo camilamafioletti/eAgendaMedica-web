@@ -33,10 +33,11 @@ export class MedicosService {
     const url = `${this.API_URL}/visualizacao-completa/${id}`;
 
     return this.http.get<any>(url)
-    .pipe(map(res => res.dados));
+    .pipe(map(res => res));
   }
 
   selecionarTodos(): Observable<ListarMedicoViewModel[]> {
-    return this.http.get<ListarMedicoViewModel[]>(this.API_URL);
+    return this.http.get<any>(this.API_URL)
+    .pipe(map(res => res));
   }
 }

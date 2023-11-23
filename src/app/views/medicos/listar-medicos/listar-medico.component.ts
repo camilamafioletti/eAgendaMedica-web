@@ -14,8 +14,6 @@ export class ListarMedicosComponent {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.medicos$ = this.route.data.pipe(
-      map((dados) => dados['medicos'])
-    );
+    this.medicos$ = this.route.data.pipe(map(dados => dados['medicos']));
   }
 }
