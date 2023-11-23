@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { ListarMedicoViewModel } from '../models/listar-medico.view-model';
@@ -8,7 +8,7 @@ import { ListarMedicoViewModel } from '../models/listar-medico.view-model';
   templateUrl: './listar-medico.component.html',
   styleUrls: ['./listar-medico.component.scss']
 })
-export class ListarMedicosComponent {
+export class ListarMedicosComponent implements OnInit{
   medicos$?: Observable<ListarMedicoViewModel[]>;
 
   constructor(private route: ActivatedRoute) {}

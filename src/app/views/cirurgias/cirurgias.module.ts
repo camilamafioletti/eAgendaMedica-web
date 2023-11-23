@@ -25,7 +25,8 @@ import { ExcluirCirurgiaComponent } from './excluir-cirurgia/excluir-cirurgia.co
     ReactiveFormsModule
   ],
   providers:[
-    CirurgiasService
+    CirurgiasService,
+    CirurgiasModule
   ]
 })
 export class CirurgiasModule { }

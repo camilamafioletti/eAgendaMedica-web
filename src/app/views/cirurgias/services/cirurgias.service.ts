@@ -1,33 +1,42 @@
-import { Observable } from "rxjs";
-import { Cirurgia } from "../models/cirurgia";
 import { HttpClient } from "@angular/common/http";
-import { environment } from "src/app/environments/environment.development";
-import { Injectable } from "@angular/core";
-
+import { Injectable } from "@angular/core"
+import { Observable, map } from "rxjs";
+import { environment } from "src/app/environments/environment.development"
+import { FormsCirurgiaViewModel } from "../models/forms-cirurgia.view-model";
+import { ListarCirurgiaViewModel } from "../models/listar-consulta.view-model";
+import { VisualizarCirurgiaViewModel } from "../models/visualizar-consulta.view-model";
 
 @Injectable()
 export class CirurgiasService {
-  private API_URL = `${environment.API_URL}/cirurgias`;
+    private API_URL = `${environment.API_URL}/Cirurgia`;
 
-  constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {}
 
-  criar(cirurgias: Cirurgia): Observable<Cirurgia> {
-    return this.http.post<Cirurgia>(this.API_URL, cirurgias);
+  criar(cirurgia: FormsCirurgiaViewModel): Observable<FormsCirurgiaViewModel> {
+    return this.http.post<FormsCirurgiaViewModel>(this.API_URL, cirurgia);
   }
 
-  editar(id: number, cirurgia: Cirurgia): Observable<Cirurgia> {
+  editar(id: string, Cirurgia: FormsCirurgiaViewModel): Observable<FormsCirurgiaViewModel> {
     const url = `${this.API_URL}/${id}`;
 
-    return this.http.put<Cirurgia>(url, cirurgia);
+    return this.http.put<FormsCirurgiaViewModel>(url, Cirurgia);
   }
 
-  selecionarPorId(id: number): Observable<Cirurgia> {
+  excluir(id: string): Observable<any> {
     const url = `${this.API_URL}/${id}`;
 
-    return this.http.get<Cirurgia>(url);
+    return this.http.delete<VisualizarCirurgiaViewModel>(url);
   }
 
-  selecionarTodos(): Observable<Cirurgia[]> {
-    return this.http.get<Cirurgia[]>(this.API_URL);
+  selecionarPorId(id: string): Observable<VisualizarCirurgiaViewModel> {
+    const url = `${this.API_URL}/visualizacao-completa/${id}`;
+
+    return this.http.get<any>(url)
+    .pipe(map(res => res.dados));
+  }
+
+  selecionarTodos(): Observable<ListarCirurgiaViewModel[]> {
+    return this.http.get<any>(this.API_URL)
+    .pipe(map(res => res.dados));
   }
 }
