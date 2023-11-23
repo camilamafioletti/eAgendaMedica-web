@@ -21,7 +21,7 @@ const listarConsultasResolver = () => {
 const visualizarConsultasResolver: ResolveFn<VisualizarConsultaViewModel> = (
   route: ActivatedRouteSnapshot
 ) => {
-  return inject(ConsultasService).selecionarPorId(
+  return inject(ConsultasService).selecionarPorIdCompleto(
     route.paramMap.get('id')!
   );
 };
@@ -49,7 +49,7 @@ const routes: Routes = [
   {
     path: 'editar/:id',
     component: EditarConsultaComponent,
-    resolve: { consulta: formsConsultasResolver },
+    resolve: { consulta: formsConsultasResolver, medicos: listarMedicosResolver },
   },
   {
     path: 'excluir/:id',

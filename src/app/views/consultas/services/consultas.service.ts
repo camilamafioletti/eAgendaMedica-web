@@ -29,8 +29,8 @@ export class ConsultasService {
     return this.http.delete<VisualizarConsultaViewModel>(url);
   }
 
-  selecionarPorId(id: string): Observable<VisualizarConsultaViewModel> {
-    const url = `${this.API_URL}/visualizacao-completa/${id}`;
+  selecionarPorId(id: string): Observable<FormsConsultaViewModel> {
+    const url = `${this.API_URL}/${id}`;
 
     return this.http.get<any>(url)
     .pipe(map(res => res.dados));
@@ -38,6 +38,13 @@ export class ConsultasService {
 
   selecionarTodos(): Observable<ListarConsultaViewModel[]> {
     return this.http.get<any>(this.API_URL)
+    .pipe(map(res => res.dados));
+  }
+
+  selecionarPorIdCompleto(id: string): Observable<VisualizarConsultaViewModel> {
+    const url = `${this.API_URL}/visualizacao-completa/${id}`;
+
+    return this.http.get<any>(url)
     .pipe(map(res => res.dados));
   }
 }

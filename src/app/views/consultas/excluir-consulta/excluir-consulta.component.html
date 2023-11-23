@@ -6,11 +6,11 @@
         Tem certeza que deseja excluir a seguinte Consulta?
       </p>
   
-      <mat-list>
+      <mat-list *ngIf="consulta$ | async as consulta">
         <mat-list-item>
           <div class="d-flex justify-content-between">
             <span>Id:</span>
-            <span>01</span>
+            <span>{{consulta.id}}</span>
           </div>
         </mat-list-item>
         <mat-divider></mat-divider>
@@ -18,7 +18,7 @@
         <mat-list-item>
           <div class="d-flex justify-content-between">
             <span>Título:</span>
-            <span>Nome do Título</span>
+            <span>{{consulta.titulo}}</span>
           </div>
         </mat-list-item>
         <mat-divider></mat-divider>
@@ -26,7 +26,7 @@
         <mat-list-item>
           <div class="d-flex justify-content-between">
             <span>Hora Início:</span>
-            <span>10:00 AM</span>
+            <span>{{consulta.horaInicio}}</span>
           </div>
         </mat-list-item>
         <mat-divider></mat-divider>
@@ -34,7 +34,7 @@
         <mat-list-item>
           <div class="d-flex justify-content-between">
             <span>Hora Final:</span>
-            <span>11:30 AM</span>
+            <span>{{consulta.horaTermino}}</span>
           </div>
         </mat-list-item>
         <mat-divider></mat-divider>
@@ -42,7 +42,7 @@
         <mat-list-item>
           <div class="d-flex justify-content-between">
             <span>Médico:</span>
-            <span>Nome do Médico</span>
+            <span>{{consulta.medico.nome}}</span>
           </div>
         </mat-list-item>
         <mat-divider></mat-divider>
@@ -53,6 +53,7 @@
           class="py-3 px-5"
           color="warn"
           mat-raised-button
+          (click)="confirmar()"
         >
           Excluir
         </button>
