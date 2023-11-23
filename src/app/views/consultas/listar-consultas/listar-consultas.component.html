@@ -14,30 +14,31 @@
   
       <div class="row gap-3">
         <mat-card
+          *ngFor="let consulta of consultas$ | async"
           appCardHover
           class="col-12 col-md-6 col-lg-3"
         >
           <mat-card-header>
             <mat-card-title>
-              <span>Titulo</span>
+              <span>{{consulta.titulo}}</span>
             </mat-card-title>
           </mat-card-header>
           
           <mat-card-content> 
             <mat-card-subtitle>
-                <span>Hora Inicio</span>
+                <span>{{consulta.horaInicio}}</span>
             </mat-card-subtitle>
           </mat-card-content>
 
           <mat-card-content> 
             <mat-card-subtitle>
-                <span>Hora Final</span>
+                <span>{{consulta.horaTermino}}</span>
             </mat-card-subtitle>
           </mat-card-content>
 
           <mat-card-content> 
             <mat-card-subtitle>
-                <span>Medico</span>
+                <span>{{consulta.nomeMedico}}</span>
             </mat-card-subtitle>
           </mat-card-content>
           

@@ -1,19 +1,28 @@
 import { NgModule, inject } from '@angular/core';
-import { ActivatedRouteSnapshot, RouterModule, Routes } from '@angular/router';
+import { ActivatedRouteSnapshot, ResolveFn, RouterModule, Routes } from '@angular/router';
 import { ConsultasService } from './services/consultas.service';
 import { ListarConsultasComponent } from './listar-consultas/listar-consultas.component';
 import { InserirConsultaComponent } from './inserir-consulta/inserir-consulta.component';
 import { EditarConsultaComponent } from './editar-consulta/editar-consulta.component';
 import { ExcluirConsultaComponent } from './excluir-consulta/excluir-consulta.component';
+import { VisualizarConsultaViewModel } from './models/visualizar-consulta.view-model';
 
 const formsConsultasResolver = (route: ActivatedRouteSnapshot) => {
-  const id = parseInt(route.paramMap.get('id')!);
+  const id = route.paramMap.get('id')!;
 
   return inject(ConsultasService).selecionarPorId(id);
 };
 
 const listarConsultasResolver = () => {
   return inject(ConsultasService).selecionarTodos();
+};
+
+const visualizarConsultasResolver: ResolveFn<VisualizarConsultaViewModel> = (
+  route: ActivatedRouteSnapshot
+) => {
+  return inject(ConsultasService).selecionarPorId(
+    route.paramMap.get('id')!
+  );
 };
 
 const routes: Routes = [
@@ -25,7 +34,7 @@ const routes: Routes = [
   {
     path: 'listar',
     component: ListarConsultasComponent,
-    // resolve: { medicos: listarMedicosResolver },
+    resolve: { consultas: listarConsultasResolver },
   },
   {
     path: 'inserir',
@@ -34,12 +43,12 @@ const routes: Routes = [
   {
     path: 'editar/:id',
     component: EditarConsultaComponent,
-    // resolve: { medicos: formsMedicosResolver },
+    resolve: { consulta: formsConsultasResolver },
   },
   {
     path: 'excluir/:id',
     component: ExcluirConsultaComponent,
-    // resolve: { medicos: formsMedicosResolver },
+    resolve: { consulta: visualizarConsultasResolver },
   },
 
 ];
