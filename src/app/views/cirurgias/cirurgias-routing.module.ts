@@ -14,20 +14,20 @@ const formsCirurgiaResolver = (route: ActivatedRouteSnapshot) => {
   return inject(CirurgiasService).selecionarPorId(id);
 };
 
-const listarCirurgiasResolver = () => {
+const listarConsultasResolver = () => {
   return inject(CirurgiasService).selecionarTodos();
+};
+
+const visualizarCirurgiasResolver: ResolveFn<VisualizarCirurgiaViewModel> = (
+  route: ActivatedRouteSnapshot
+) => {
+  return inject(CirurgiasService).selecionarPorIdCompleto(
+    route.paramMap.get('id')!
+  );
 };
 
 const listarMedicosResolver = () => {
   return inject(MedicosService).selecionarTodos();
-};
-
-const visualizarCirurgiaResolver: ResolveFn<VisualizarCirurgiaViewModel> = (
-  route: ActivatedRouteSnapshot
-) => {
-  return inject(CirurgiasService).selecionarPorId(
-    route.paramMap.get('id')!
-  );
 };
 
 
@@ -40,7 +40,7 @@ const routes: Routes = [
   {
     path: 'listar',
     component: ListarCirurgiasComponent,
-    resolve: { cirurgias: listarCirurgiasResolver },
+    resolve: { cirurgias: listarConsultasResolver },
   },
   {
     path: 'inserir',
@@ -55,7 +55,7 @@ const routes: Routes = [
   {
   path: 'excluir/:id',
   component: ExcluirCirurgiaComponent,
-  resolve: { cirurgia: formsCirurgiaResolver},
+  resolve: { cirurgia: visualizarCirurgiasResolver},
   },
 ];
 

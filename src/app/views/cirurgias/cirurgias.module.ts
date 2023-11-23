@@ -9,6 +9,7 @@ import { ListarCirurgiasComponent } from './listar-cirurgias/listar-cirurgias.co
 import { InserirCirurgiaComponent } from './inserir-cirurgia/inserir-cirurgia.component';
 import { EditarCirurgiaComponent } from './editar-cirurgia/editar-cirurgia.component';
 import { ExcluirCirurgiaComponent } from './excluir-cirurgia/excluir-cirurgia.component';
+import { MedicosService } from '../medicos/services/medicos.service';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { ExcluirCirurgiaComponent } from './excluir-cirurgia/excluir-cirurgia.co
   ],
   providers:[
     CirurgiasService,
-    CirurgiasModule
+    MedicosService
   ]
 })
 export class CirurgiasModule { }

@@ -28,8 +28,8 @@ export class CirurgiasService {
     return this.http.delete<VisualizarCirurgiaViewModel>(url);
   }
 
-  selecionarPorId(id: string): Observable<VisualizarCirurgiaViewModel> {
-    const url = `${this.API_URL}/visualizacao-completa/${id}`;
+  selecionarPorId(id: string): Observable<FormsCirurgiaViewModel> {
+    const url = `${this.API_URL}/${id}`;
 
     return this.http.get<any>(url)
     .pipe(map(res => res.dados));
@@ -37,6 +37,13 @@ export class CirurgiasService {
 
   selecionarTodos(): Observable<ListarCirurgiaViewModel[]> {
     return this.http.get<any>(this.API_URL)
+    .pipe(map(res => res.dados));
+  }
+
+  selecionarPorIdCompleto(id: string): Observable<VisualizarCirurgiaViewModel> {
+    const url = `${this.API_URL}/visualizacao-completa/${id}`;
+
+    return this.http.get<any>(url)
     .pipe(map(res => res.dados));
   }
 }
