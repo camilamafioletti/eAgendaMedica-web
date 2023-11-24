@@ -24,20 +24,24 @@ export class InserirMedicoComponent implements OnInit{
     this.form = this.fb.group({
       nome: new FormControl('', [Validators.required]),
       crm: new FormControl('', [Validators.required]),
-      telefone: new FormControl('', [Validators.required]),
+      telefone: new FormControl('', [Validators.required, Validators.pattern(/^\(\d{2}\)\s\d{4,5}-\d{4}$/)]),
     });
   }
 
   gravar(): void {
-    this.medicosService.criar(this.form?.value).subscribe({
-      next: (res) => this.processarSucesso(res),
-      error: (err) => this.processarFalha(err),
-    });
+    if (this.form.valid) {
+      this.medicosService.criar(this.form.value).subscribe({
+        next: (res) => this.processarSucesso(res),
+        error: (err) => this.processarFalha(err),
+      });
+    } else {
+      this.notification.aviso('Por favor, corrija os erros no formulário antes de enviar.');
+    }
   }
 
   processarSucesso(res: FormsMedicoViewModel) {
     this.notification.sucesso(
-      `A medico ${res.nome} foi cadastrada com sucesso!`
+      `O médico ${res.nome} foi cadastrado com sucesso!`
     );
 
     this.router.navigate(['/medicos/listar']);

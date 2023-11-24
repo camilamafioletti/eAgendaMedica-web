@@ -1,16 +1,40 @@
 .custom-card {
   background-color: #d1d1f0;  
-  color: #333;  
+  color: #333; 
+  border-radius: 10px;
+  transition: transform 0.1s; 
 }
 
-.bg {
-  background-repeat: no-repeat; 
-  background-position: center; 
-  background-size: cover; 
-  position: absolute;
-  max-width: 100%;
-  height: auto;
-  border: 0;
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
   margin: 0;
   padding: 0;
+}
+
+.custom {
+  margin: 20px;
+}
+
+h1,
+h4,
+span {
+  color: #333;
+}
+
+h1 {
+  font-size: 2.0rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+}
+
+mat-card-title,
+mat-icon {
+  color: #4a0e587a;
 }

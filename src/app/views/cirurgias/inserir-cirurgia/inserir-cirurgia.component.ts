@@ -14,7 +14,7 @@ import { NotificationService } from 'src/app/core/notification/services/notifica
 })
 export class InserirCirurgiaComponent implements OnInit {
   form?: FormGroup;
-  ListaMedicos$?: Observable<ListarMedicoViewModel[]>;
+  medicos$?: Observable<ListarMedicoViewModel[]>;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,10 +32,9 @@ export class InserirCirurgiaComponent implements OnInit {
       medicosSelecionados: [[]],
     });
 
-    this.ListaMedicos$ = this.route.data.pipe(map(dados => dados['medicos']));
+    this.medicos$ = this.route.data.pipe(map(dados => dados['medicos']));
   }
-
-
+  
   gravar(): void {
     this.cirurgiasService.criar(this.form?.value).subscribe({
       next: (res) => this.processarSucesso(res),

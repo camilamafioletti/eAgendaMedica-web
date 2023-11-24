@@ -10,6 +10,7 @@ import { InserirCirurgiaComponent } from './inserir-cirurgia/inserir-cirurgia.co
 import { EditarCirurgiaComponent } from './editar-cirurgia/editar-cirurgia.component';
 import { ExcluirCirurgiaComponent } from './excluir-cirurgia/excluir-cirurgia.component';
 import { MedicosService } from '../medicos/services/medicos.service';
+import { VisualizarMedicosDaCirurgiaComponent } from './visualizar-medicos-da-cirurgia/visualizar-medicos-da-cirurgia.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MedicosService } from '../medicos/services/medicos.service';
     ListarCirurgiasComponent,
     InserirCirurgiaComponent,
     EditarCirurgiaComponent,
-    ExcluirCirurgiaComponent
+    ExcluirCirurgiaComponent,
+    VisualizarMedicosDaCirurgiaComponent
   ],
   imports: [
     CommonModule,
