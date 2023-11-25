@@ -10,6 +10,7 @@ import { InserirConsultaComponent } from './inserir-consulta/inserir-consulta.co
 import { EditarConsultaComponent } from './editar-consulta/editar-consulta.component';
 import { ExcluirConsultaComponent } from './excluir-consulta/excluir-consulta.component';
 import { MedicosService } from '../medicos/services/medicos.service';
+import 'src/app/extensions/form-group.extension';
 
 
 @NgModule({

@@ -11,6 +11,7 @@ import { ListarConsultaViewModel } from '../consultas/models/listar-consulta.vie
 import { VisualizarCirurgiasDoMedicoComponent } from './visualizar-cirurgias-do-medico/visualizar-cirurgias-do-medico.component';
 import { VisualizarConsultasDoMedicoComponent } from './visualizar-consultas-do-medico/visualizar-consultas-do-medico.component';
 
+
 const formsMedicosResolver = (route: ActivatedRouteSnapshot) => {
   const id =  route.paramMap.get('id')!;
 

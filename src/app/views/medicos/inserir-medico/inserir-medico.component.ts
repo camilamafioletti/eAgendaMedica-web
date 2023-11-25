@@ -24,7 +24,7 @@ export class InserirMedicoComponent implements OnInit{
     this.form = this.fb.group({
       nome: new FormControl('', [Validators.required]),
       crm: new FormControl('', [Validators.required]),
-      telefone: new FormControl('', [Validators.required, Validators.pattern(/^\(\d{2}\)\s\d{4,5}-\d{4}$/)]),
+      telefone: new FormControl('', [Validators.required]),
     });
   }
 
@@ -41,7 +41,7 @@ export class InserirMedicoComponent implements OnInit{
 
   processarSucesso(res: FormsMedicoViewModel) {
     this.notification.sucesso(
-      `O médico ${res.nome} foi cadastrado com sucesso!`
+      `O médico foi cadastrado com sucesso!`
     );
 
     this.router.navigate(['/medicos/listar']);
@@ -49,7 +49,7 @@ export class InserirMedicoComponent implements OnInit{
 
   processarFalha(err: any) {
     this.notification.erro(
-      err.mensagem
+      err.error.erros[0]
     );
   }
 }

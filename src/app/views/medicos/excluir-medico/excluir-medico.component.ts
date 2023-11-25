@@ -42,6 +42,8 @@ export class ExcluirMedicoComponent implements OnInit{
   }
 
   processarFalha(err: any) {
-    console.log(err);
+    this.notification.erro(
+      err.error.erros[0]
+    );
   }
 }

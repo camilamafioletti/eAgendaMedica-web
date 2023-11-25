@@ -10,6 +10,7 @@ import { VisualizarCirurgiaViewModel } from './models/visualizar-consulta.view-m
 import { ListarMedicoViewModel } from '../medicos/models/listar-medico.view-model';
 import { VisualizarMedicosDaCirurgiaComponent } from './visualizar-medicos-da-cirurgia/visualizar-medicos-da-cirurgia.component';
 
+
 const formsCirurgiaResolver = (route: ActivatedRouteSnapshot) => {
   const id = route.paramMap.get('id')!;
 

@@ -11,7 +11,7 @@ import { EditarCirurgiaComponent } from './editar-cirurgia/editar-cirurgia.compo
 import { ExcluirCirurgiaComponent } from './excluir-cirurgia/excluir-cirurgia.component';
 import { MedicosService } from '../medicos/services/medicos.service';
 import { VisualizarMedicosDaCirurgiaComponent } from './visualizar-medicos-da-cirurgia/visualizar-medicos-da-cirurgia.component';
-
+import 'src/app/extensions/form-group.extension';
 
 @NgModule({
   declarations: [

@@ -52,7 +52,7 @@ export class InserirConsultaComponent implements OnInit{
 
   processarFalha(err: any) {
     this.notification.erro(
-      err.mensagem
+      err.error.erros[0]
     );
   }
 }

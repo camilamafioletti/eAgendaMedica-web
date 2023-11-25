@@ -8,6 +8,7 @@ import { ExcluirConsultaComponent } from './excluir-consulta/excluir-consulta.co
 import { VisualizarConsultaViewModel } from './models/visualizar-consulta.view-model';
 import { MedicosService } from '../medicos/services/medicos.service';
 
+
 const formsConsultasResolver = (route: ActivatedRouteSnapshot) => {
   const id = route.paramMap.get('id')!;
 
