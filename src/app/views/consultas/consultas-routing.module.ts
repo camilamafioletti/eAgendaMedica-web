@@ -19,6 +19,10 @@ const listarConsultasResolver = () => {
   return inject(ConsultasService).selecionarTodos();
 };
 
+const listarMedicosResolver = () => {
+  return inject(MedicosService).selecionarTodos();
+};
+
 const visualizarConsultasResolver: ResolveFn<VisualizarConsultaViewModel> = (
   route: ActivatedRouteSnapshot
 ) => {
@@ -27,9 +31,6 @@ const visualizarConsultasResolver: ResolveFn<VisualizarConsultaViewModel> = (
   );
 };
 
-const listarMedicosResolver = () => {
-  return inject(MedicosService).selecionarTodos();
-};
 
 const routes: Routes = [
   {
