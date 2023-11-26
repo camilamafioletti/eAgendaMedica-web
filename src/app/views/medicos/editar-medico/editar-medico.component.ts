@@ -34,6 +34,14 @@ export class EditarMedicoComponent implements OnInit{
   }
 
   gravar(): void {
+    if(this.form?.invalid){
+      for(let erro of this.form.validate()) {
+        this.notification.erro(erro);
+      }
+
+      return;
+    }
+    
     const id = this.route.snapshot.paramMap.get('id')!;
     this.medicosService.editar(id, this.form?.value).subscribe({
       next: (res) => this.processarSucesso(res),
@@ -43,7 +51,7 @@ export class EditarMedicoComponent implements OnInit{
 
   processarSucesso(res: FormsMedicoViewModel) {
     this.notification.sucesso(
-      `O medico ${res.nome} foi cadastrado(a) com sucesso!`
+      `O médico foi editado com sucesso!`
     );
 
     this.router.navigate(['/medicos/listar']);

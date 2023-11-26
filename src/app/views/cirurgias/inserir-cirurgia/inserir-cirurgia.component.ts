@@ -42,6 +42,14 @@ export class InserirCirurgiaComponent implements OnInit {
   }
   
   gravar(): void {
+    if(this.form?.invalid){
+      for(let erro of this.form.validate()) {
+        this.notification.erro(erro);
+      }
+
+      return;
+    }
+    
     this.cirurgiasService.criar(this.form?.value).subscribe({
       next: (res) => this.processarSucesso(res),
       error: (err) => this.processarFalha(err),
@@ -50,7 +58,7 @@ export class InserirCirurgiaComponent implements OnInit {
 
   processarSucesso(res: FormsCirurgiaViewModel) {
     this.notification.sucesso(
-      `A cirurgia ${res.titulo} foi cadastrada com sucesso!`
+      `A cirurgia foi cadastrada com sucesso!`
     );
 
     this.router.navigate(['/cirurgias/listar']);

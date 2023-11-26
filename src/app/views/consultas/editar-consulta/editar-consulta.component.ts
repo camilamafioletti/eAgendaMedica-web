@@ -45,6 +45,14 @@ export class EditarConsultaComponent implements OnInit {
   }
   
   gravar(): void {
+    if(this.form?.invalid){
+      for(let erro of this.form.validate()) {
+        this.notification.erro(erro);
+      }
+
+      return;
+    }
+    
     const id = this.route.snapshot.paramMap.get('id')!;
     this.consultasService.editar(id, this.form?.value).subscribe({
       next: (res) => this.processarSucesso(res),
@@ -54,7 +62,7 @@ export class EditarConsultaComponent implements OnInit {
 
   processarSucesso(res: FormsConsultaViewModel) {
     this.notification.sucesso(
-      `A consulta ${res.titulo} foi cadastrado(a) com sucesso!`
+      `A consulta foi cadastrada com sucesso!`
     );
 
     this.router.navigate(['/consultas/listar']);

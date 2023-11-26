@@ -41,6 +41,14 @@ export class InserirConsultaComponent implements OnInit{
   }
 
   gravar(): void {
+    if(this.form?.invalid){
+      for(let erro of this.form.validate()) {
+        this.notification.erro(erro);
+      }
+
+      return;
+    }
+    
     this.consultasService.criar(this.form?.value).subscribe({
       next: (res) => this.processarSucesso(res),
       error: (err) => this.processarFalha(err),
@@ -49,7 +57,7 @@ export class InserirConsultaComponent implements OnInit{
 
   processarSucesso(res: FormsConsultaViewModel) {
     this.notification.sucesso(
-      `A consulta ${res.titulo} foi cadastrada com sucesso!`
+      `A consulta foi cadastrada com sucesso!`
     );
 
     this.router.navigate(['/consultas/listar']);

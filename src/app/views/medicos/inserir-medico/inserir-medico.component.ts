@@ -23,12 +23,20 @@ export class InserirMedicoComponent implements OnInit{
   ngOnInit(): void {
     this.form = this.fb.group({
       nome: new FormControl('', [Validators.required]),
-      crm: new FormControl('', [Validators.required]),
-      telefone: new FormControl('', [Validators.required]),
+      crm: new FormControl('', [Validators.required, Validators.pattern(/^\d{5}-[A-Z]{2}$/)]),
+      telefone: new FormControl('', [Validators.required, Validators.pattern(/^\d{5}-[A-Z]{2}$/)]),
     });
   }
 
   gravar(): void {
+    if(this.form?.invalid){
+      for(let erro of this.form.validate()) {
+        this.notification.erro(erro);
+      }
+
+      return;
+    }
+    
     if (this.form.valid) {
       this.medicosService.criar(this.form.value).subscribe({
         next: (res) => this.processarSucesso(res),
@@ -47,7 +55,7 @@ export class InserirMedicoComponent implements OnInit{
 
   processarFalha(err: any) {
     this.notification.erro(
-      err.error.erros[0]
+      err.error.erros.consoleLog(err)
     );
   }
 }
