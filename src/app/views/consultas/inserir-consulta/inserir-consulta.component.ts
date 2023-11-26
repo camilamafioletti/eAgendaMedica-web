@@ -27,12 +27,17 @@ export class InserirConsultaComponent implements OnInit{
   ngOnInit(): void {
     this.form = this.fb.group({
       titulo: new FormControl('', [Validators.required]),
+      data: new FormControl('', [Validators.required,]),
       horaInicio: new FormControl('', [Validators.required]),
       horaTermino: new FormControl('', [Validators.required]),
       medicoId: new FormControl('', [Validators.required]),   
     });
 
     this.medicos$ = this.route.data.pipe(map(dados => dados['medicos']));
+  }
+
+  campoEstaInvalido(nome: string){
+    return this.form.get(nome)!.touched && this.form.get(nome)!.invalid;
   }
 
   gravar(): void {

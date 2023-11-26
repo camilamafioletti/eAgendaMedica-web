@@ -3,7 +3,8 @@ import { ListarMedicoViewModel } from "../../medicos/models/listar-medico.view-m
 export type VisualizarCirurgiaViewModel = {
     id: string;
     titulo: string;
-    horaInicio: string;
-    horaTermino: string;
+    data: Date;
+    horaInicio: Date;
+    horaTermino: Date;
     medicos: ListarMedicoViewModel[];
 }

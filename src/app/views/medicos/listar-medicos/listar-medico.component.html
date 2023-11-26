@@ -1,8 +1,15 @@
 <div class="row justify-content-center mt-5">
   <div class="col-md-8 d-grid gap-3">
-    <h1 class="fs-2 row justify-content-center ">Lista de Médicos Cadastrados</h1>
+    <h1 class="fs-2 row justify-content-center">
+      Lista de Médicos Cadastrados
+    </h1>
 
-    <button routerLink="/medicos/inserir" mat-raised-button class="py-4 px-4 fs-8" color="primary">
+    <button
+      routerLink="/medicos/inserir"
+      mat-raised-button
+      class="py-4 px-4 fs-8"
+      color="primary"
+    >
       <mat-icon>add</mat-icon>
       Novo Médico
     </button>
@@ -15,19 +22,21 @@
       >
         <mat-card-header>
           <mat-card-title>
-            <span>{{medico.nome}}</span>
+            <span>{{ medico.nome }}</span>
           </mat-card-title>
         </mat-card-header>
 
-        <mat-card-content> 
+        <mat-card-content>
           <mat-card-subtitle>
-              <span>{{medico.telefone}}</span>
+            <span>{{ medico.telefone }}</span>
           </mat-card-subtitle>
         </mat-card-content>
 
-        <mat-card-content> 
+        <mat-card-content>
           <mat-card-subtitle>
-            <span>{{ medico.disponibilidade ? 'Disponível' : 'Indisponível' }}</span>
+            <span>{{
+              medico.disponibilidade ? "Disponível" : "Indisponível"
+            }}</span>
           </mat-card-subtitle>
         </mat-card-content>
 
@@ -49,21 +58,21 @@
             <mat-icon>zoom_in</mat-icon>
           </button>
           <button
-          mat-icon-button
-          matTooltip="Editar"
-          color="primary"
-          routerLink="/medicos/editar/{{medico.id}}"
-        >
-          <mat-icon>edit_note</mat-icon>
-        </button>
-        <button
-        mat-icon-button
-        matTooltip="Excluir"
-        color="warn"
-        routerLink="/medicos/excluir/{{medico.id}}"
-      >
-        <mat-icon>delete_sweep</mat-icon>
-      </button>
+            mat-icon-button
+            matTooltip="Editar"
+            color="primary"
+            routerLink="/medicos/editar/{{ medico.id }}"
+          >
+            <mat-icon>edit_note</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            matTooltip="Excluir"
+            color="warn"
+            routerLink="/medicos/excluir/{{ medico.id} }"
+          >
+            <mat-icon>delete_sweep</mat-icon>
+          </button>
         </mat-card-actions>
       </mat-card>
     </div>

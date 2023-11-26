@@ -27,6 +27,7 @@ export class EditarConsultaComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       titulo: new FormControl('', [Validators.required]),
+      data: new FormControl('', [Validators.required,]),
       horaInicio: new FormControl('', [Validators.required]),
       horaTermino: new FormControl('', [Validators.required]),
       medicoId: new FormControl('', [Validators.required]),   
@@ -39,6 +40,10 @@ export class EditarConsultaComponent implements OnInit {
     this.form.patchValue(consulta);
   }
 
+  campoEstaInvalido(nome: string){
+    return this.form.get(nome)!.touched && this.form.get(nome)!.invalid;
+  }
+  
   gravar(): void {
     const id = this.route.snapshot.paramMap.get('id')!;
     this.consultasService.editar(id, this.form?.value).subscribe({

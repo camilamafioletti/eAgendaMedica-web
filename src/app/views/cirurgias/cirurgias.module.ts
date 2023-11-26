@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { CirurgiasRoutingModule } from './cirurgias-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -29,7 +29,8 @@ import 'src/app/extensions/form-group.extension';
   ],
   providers:[
     CirurgiasService,
-    MedicosService
+    MedicosService,
+    DatePipe
   ]
 })
 export class CirurgiasModule { }

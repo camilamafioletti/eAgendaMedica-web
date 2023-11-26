@@ -1,7 +1,8 @@
 export type FormsCirurgiaViewModel = {
     id: string;
     titulo: string;
-    horaInicio: string;
-    horaTermino: string;
+    data: Date;
+    horaInicio: Date;
+    horaTermino: Date;
     medicosSelecionados: string[];
 }

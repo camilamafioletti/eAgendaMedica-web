@@ -3,6 +3,7 @@
     <h1 class="fs-2">Agendar Cirurgia</h1>
 
     <form (ngSubmit)="gravar()" [formGroup]="form!" class="d-grid mt-4">
+      
       <mat-form-field appearance="outline" class="d-grid mt-3">
         <mat-label for="titulo">Título</mat-label>
         <input
@@ -11,6 +12,20 @@
           type="text"
           placeholder="Digite o Título"
         />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Data</mat-label>
+        <input
+          [ngClass]="campoEstaInvalido('data') ? 'is-invalid' : ''"
+          type="text"
+          formControlName="data"
+          matInput
+          [matDatepicker]="picker"
+          placeholder="Escolha uma data"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
       <mat-form-field appearance="outline">

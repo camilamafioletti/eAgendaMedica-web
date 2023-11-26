@@ -27,6 +27,7 @@ export class EditarCirurgiaComponent implements OnInit{
   ngOnInit(): void {
     this.form = this.fb.group({
       titulo: new FormControl('', [Validators.required]),
+      data: new FormControl('', [Validators.required,]),
       horaInicio: new FormControl('', [Validators.required]),
       horaTermino: new FormControl('', [Validators.required]),
       medicosSelecionados: [[]],
@@ -37,6 +38,10 @@ export class EditarCirurgiaComponent implements OnInit{
     const cirurgia = this.route.snapshot.data['cirurgia'];
 
     this.form.patchValue(cirurgia);
+  }
+
+  campoEstaInvalido(nome: string){
+    return this.form.get(nome)!.touched && this.form.get(nome)!.invalid;
   }
 
   gravar(): void {

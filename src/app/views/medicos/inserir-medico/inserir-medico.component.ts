@@ -34,9 +34,7 @@ export class InserirMedicoComponent implements OnInit{
         next: (res) => this.processarSucesso(res),
         error: (err) => this.processarFalha(err),
       });
-    } else {
-      this.notification.aviso('Por favor, corrija os erros no formulário antes de enviar.');
-    }
+    } 
   }
 
   processarSucesso(res: FormsMedicoViewModel) {
