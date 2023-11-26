@@ -22,7 +22,7 @@ O objetivo principal deste projeto é criar uma ferramenta eficiente para gerenc
 
   
 
-![sistema](https://github.com/camilamafioletti/ReadMe/assets/celular.png)
+![sistema](https://github.com/camilamafioletti/eAgendaMedica-web/blob/master/src/assets/celular.png)
 
   
 
@@ -30,7 +30,7 @@ O objetivo principal deste projeto é criar uma ferramenta eficiente para gerenc
 
   
 
-![sistema](https://github.com/camilamafioletti/ReadMe/assets/dashboard.png)
+![sistema](https://github.com/camilamafioletti/eAgendaMedica-web/blob/master/src/assets/dashboard.png)
 
   
 
