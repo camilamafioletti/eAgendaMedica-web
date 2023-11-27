@@ -24,7 +24,7 @@ export class InserirMedicoComponent implements OnInit{
     this.form = this.fb.group({
       nome: new FormControl('', [Validators.required]),
       crm: new FormControl('', [Validators.required, Validators.pattern(/^\d{5}-[A-Z]{2}$/)]),
-      telefone: new FormControl('', [Validators.required, Validators.pattern(/^\d{5}-[A-Z]{2}$/)]),
+      telefone: new FormControl('', [Validators.required]),
     });
   }
 
